@@ -1,0 +1,13 @@
+.ng-dirty.ng-invalid:not(form){
+	border-color: #f00;
+    box-shadow: 0px 0px 10px #f00;
+}
+
+.ng-dirty.ng-valid:not(form){
+	border-color: #6EA2DE;
+    box-shadow: 0px 0px 10px #6EA2DE;
+}
+
+input[type=text]{
+	border-radius: 8px;
+}

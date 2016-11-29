@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
 
 	$scope.submit = function () {
 		 Email.sendEmail($scope);
+		 $scope.formdata = {};
 	}
 
 })
@@ -26,6 +27,7 @@ angular.module('starter.controllers', [])
 
 	$scope.submit = function () {
 		Email.sendEmail($scope);
+		$scope.formdata = {};
 	}
 })
 
@@ -40,5 +42,6 @@ angular.module('starter.controllers', [])
 
 	$scope.submit = function () {
 		Email.sendEmail($scope);	
+		$scope.formdata = {};
 	}
 });

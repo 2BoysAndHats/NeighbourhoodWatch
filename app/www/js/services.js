@@ -3,13 +3,21 @@ angular.module('starter.services', [])
 .factory('Email', function() {
  return {
   sendEmail: function (scope) {
+
+    var options = {
+      weekday: "short", year: "numeric", month: "short",
+      day: "numeric", hour: "2-digit", minute: "2-digit"
+    };
+
+
     var body = 
 
             scope.title + " Alert!\n"
 
             + "From: " + scope.formdata.name
-            + "\nWhere:" + scope.formdata.location
-            + "\n\n\n"
+            + "\nWhen: " + new Date().toLocaleDateString("en-US",options)
+            + "\nWhere: " + scope.formdata.location
+            + "\n\n"
             + scope.formdata.comment
             + "\n\n"
             + "Sent by the Neighbourhood Watch app."

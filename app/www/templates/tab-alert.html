@@ -2,16 +2,16 @@
   <ion-content>
       <h2>{{title}} Alert</h2>
 
-      <form id="contentForm" ng-submit = "submit()" novalidate>
-      	<div class="list list-inset">
+      <form id="contentForm" name="contentForm" ng-submit = "contentForm.$valid && submit()" novalidate>
+      	<div class="list">
 		  <label class="item item-input">
-		    <input type="text" placeholder="Name" ng-model="formdata.name">
+		    <input type="text" placeholder="Name" ng-model="formdata.name" required>
 		  </label>
 		  <label class="item item-input">
-		    <input type="text" placeholder="Location" ng-model="formdata.location" >
+		    <input type="text" placeholder="Location" ng-model="formdata.location" required>
 		  </label>
 		  <label class="item item-input">
-		    <input type="text" placeholder="Comment" ng-model="formdata.comment">
+		    <input type="text" placeholder="Comment" ng-model="formdata.comment" required>
 		  </label>
 		</div>
 
