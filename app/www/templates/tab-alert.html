@@ -1,5 +1,21 @@
-<ion-view view-title="{{title}} alert">
+<ion-view view-title="{{title}} alert" class="padding">
   <ion-content>
-      TODO: {{title}} Alert
+      <h2>{{title}} Alert</h2>
+
+      <form id="contentForm" ng-submit = "submit()" novalidate>
+      	<div class="list list-inset">
+		  <label class="item item-input">
+		    <input type="text" placeholder="Name" ng-model="formdata.name">
+		  </label>
+		  <label class="item item-input">
+		    <input type="text" placeholder="Location" ng-model="formdata.location" >
+		  </label>
+		  <label class="item item-input">
+		    <input type="text" placeholder="Comment" ng-model="formdata.comment">
+		  </label>
+		</div>
+
+		<input type="submit" class="button button-block button-positive" value="Send">
+      </form>
   </ion-content>
 </ion-view>
