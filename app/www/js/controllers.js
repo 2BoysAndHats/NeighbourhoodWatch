@@ -1,11 +1,11 @@
 angular.module('starter.controllers', [])
 
-.controller('GreenCtrl', function($scope,Email) {
+.controller('GreenCtrl', function($scope,Email,GeoService) {
 	$scope.title = "Green";
 
 	$scope.formdata = {
 		name:"",
-		location:"",
+		location: "",
 		comment:""
 	};
 
@@ -14,14 +14,21 @@ angular.module('starter.controllers', [])
 		 $scope.formdata = {};
 	}
 
+	//Get location
+	GeoService.getPosition().then(function (pos) {
+		$scope.formdata.location = pos.coords.latitude + "," + pos.coords.longitude;
+	},function (error) {	
+		console.log(error)
+	});
+
 })
 
-.controller('AmberCtrl', function($scope,Email) {
+.controller('AmberCtrl', function($scope,Email,GeoService) {
   	$scope.title = "Amber";
 
   	$scope.formdata = {
-  		name:"",
-		location:"",
+		name:"",
+		location: "",
 		comment:""
 	};
 
@@ -29,14 +36,21 @@ angular.module('starter.controllers', [])
 		Email.sendEmail($scope);
 		$scope.formdata = {};
 	}
+
+	//Get location
+	GeoService.getPosition().then(function (pos) {
+		$scope.formdata.location = pos.coords.latitude + "," + pos.coords.longitude;
+	},function (error) {	
+		console.log(error)
+	});
 })
 
-.controller('RedCtrl', function($scope,Email) {
+.controller('RedCtrl', function($scope,Email,GeoService) {
   	$scope.title = "Red";
 
-  	$scope.formdata = {
-  		name:"",
-		location:"",
+	$scope.formdata = {
+		name:"",
+		location: "",
 		comment:""
 	};
 
@@ -44,4 +58,6 @@ angular.module('starter.controllers', [])
 		Email.sendEmail($scope);	
 		$scope.formdata = {};
 	}
+
+	
 });
